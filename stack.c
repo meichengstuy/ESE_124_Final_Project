@@ -18,7 +18,7 @@ typedef struct
 
 int top=-1,VA_memory[Mem_size];
 
-void push
+void push()
 {
 int x;
 
@@ -36,7 +36,7 @@ int x;
 
 };
 
-void pop
+void pop()
 {
 if (top == -1)
     {
@@ -50,12 +50,12 @@ if (top == -1)
 
 };
 
-void clear
+void clear()
 {
 
 };
 
-int CWL
+int CWL()
 {
 	while (maze[x-1][y] != '*'
 	{
@@ -70,7 +70,7 @@ int CWL
 	}
 };
 
-int CWR
+int CWR()
 {
 	while (maze[x+1][y] != '*'
 	{
@@ -85,13 +85,33 @@ int CWR
 	}
 };
 
-int CWD
+int CWD()
 {
 
 };
 
-int CWU
+int CWU()
 {
 
 };
-
+void mark()
+{
+};
+void move_F()
+{
+};
+void move_B()
+{
+};
+void move_R()
+{
+};
+void move_L()
+{
+};
+void BJPI()
+{
+};
+void CJPI()
+{
+};
