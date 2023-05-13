@@ -4,12 +4,12 @@
 #define MAX_NUMBER_OF_STEPS <>
 #define MAX <>
 
-Int main()
+int main()
 {
 	FILE *inpf;
 	char maze[MAX][MAX]
 	int nl = 0; 
-  int nc = 0;
+  	int nc = 0;
 
 	If (inpf == NULL)
 	{
@@ -17,15 +17,15 @@ Int main()
 		exit(1);
 	}
 //puts the file into the array MAZE
-    	If ((f = fopen ("maze.txt", "r")) == NULL)
-  {
+    	if ((f = fopen ("maze.txt", "r")) == NULL)
+  	{
 	}
 	else {
 		while ((c = fgetc(f)) != EOF)
- {
+ 		{
 		 	Maze [nl][nc] = c;
 		 	if (c == '\n')
- 	{	
+ 			{	
 		    		nl++;
 		    		nc = 0;
 	 	  	}
@@ -35,14 +35,15 @@ Int main()
 			}
 		}
 	}
-
+//prints out the maze
 	printf ("\nStart: ------------\n");
 	for (int i = 0; i < MAX; i++)
 	{
 		for (int j = 0; j < MAX; j++)
 		{
 		   printf ("%c", Maze[i][j]);
-
+		}
+	}
 	printf ("\n------------\n");
 
 }
