@@ -16,7 +16,7 @@ int main()
 		printf(“ERROR:File maze.txt cannot be opened”);
 		exit(1);
 	}
-//puts the file into the array MAZE
+	//puts the file into the array MAZE
     	if ((f = fopen ("maze.txt", "r")) == NULL)
   	{
 	}
@@ -35,7 +35,7 @@ int main()
 			}
 		}
 	}
-//prints out the maze
+	//prints out the maze
 	printf ("\nStart: ------------\n");
 	for (int i = 0; i < MAX; i++)
 	{
@@ -46,4 +46,4 @@ int main()
 	}
 	printf ("\n------------\n");
 
-}
+}//end of main file
