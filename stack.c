@@ -61,11 +61,11 @@ int CWL()
 	{
 		if (maze[x-1][y] == 'x')
 		{
-			VA_Action.left[]==1;
+			VA_Action.check_left[]==1;
 		}
 		else
 		{
-			VA_Action.left[]==0;
+			VA_Action.check_left[]==0;
 		}
 	}
 };
@@ -76,23 +76,43 @@ int CWR()
 	{
 		if (maze[x+1][y] == 'x')
 		{
-			VA_Action.right[]==1;
+			VA_Action.check_right[]==1;
 		}
 		else
 		{
-			VA_Action.right[]==0;
+			VA_Action.check_right[]==0;
 		}
 	}
 };
 
 int CWD()
 {
-
+	while (maze[x][y-1] != '*'
+	{
+		if (maze[x][y-1] == 'x')
+		{
+			VA_Action.check_down[]==1;
+		}
+		else
+		{
+			VA_Action.check_down[]==0;
+		}
+	}
 };
 
 int CWU()
 {
-
+	while (maze[x][y+1] != '*'
+	{
+		if (maze[x][y+1] == 'x')
+		{
+			VA_Action.check_up[]==1;
+		}
+		else
+		{
+			VA_Action.check_up[]==0;
+		}
+	}
 };
 void mark()
 {
