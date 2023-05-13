@@ -9,15 +9,17 @@
 int main()
 {
 	FILE *inpf;
+	FILE *outf;
 	char maze[MAX][MAX]
 	int nl = 0; 
   	int nc = 0;
 
-	If (inpf == NULL)
+	If (outf == NULL)
 	{
 		printf(“ERROR:File maze.txt cannot be opened”);
 		exit(1);
 	}
+
 	//puts the file into the array MAZE
     	if ((f = fopen ("maze.txt", "r")) == NULL)
   	{
@@ -47,5 +49,8 @@ int main()
 		}
 	}
 	printf ("\n------------\n");
-
+	
+	//psuedocode for Ant Intelligence
+	//Code to read from Input File
+	//Execute commands given from Input File
 }//end of main file
