@@ -1,3 +1,5 @@
+int num_step=0;
+
 typedef struct
 {
 	int curr_x;
@@ -61,11 +63,11 @@ int CWL()
 	{
 		if (maze[x-1][y] == 'x')
 		{
-			VA_Action.check_left[]==1;
+			VA_Action.check_left[num_step]==1;
 		}
 		else
 		{
-			VA_Action.check_left[]==0;
+			VA_Action.check_left[num_step]==0;
 		}
 	}
 };
@@ -76,11 +78,11 @@ int CWR()
 	{
 		if (maze[x+1][y] == 'x')
 		{
-			VA_Action.check_right[]==1;
+			VA_Action.check_right[num_step]==1;
 		}
 		else
 		{
-			VA_Action.check_right[]==0;
+			VA_Action.check_right[num_step]==0;
 		}
 	}
 };
@@ -91,11 +93,11 @@ int CWD()
 	{
 		if (maze[x][y-1] == 'x')
 		{
-			VA_Action.check_down[]==1;
+			VA_Action.check_down[num_step]==1;
 		}
 		else
 		{
-			VA_Action.check_down[]==0;
+			VA_Action.check_down[num_step]==0;
 		}
 	}
 };
@@ -106,11 +108,11 @@ int CWU()
 	{
 		if (maze[x][y+1] == 'x')
 		{
-			VA_Action.check_up[]==1;
+			VA_Action.check_up[num_step]==1;
 		}
 		else
 		{
-			VA_Action.check_up[]==0;
+			VA_Action.check_up[num_step]==0;
 		}
 	}
 };
