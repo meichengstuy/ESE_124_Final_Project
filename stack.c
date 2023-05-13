@@ -123,17 +123,26 @@ void mark()
 void move_F()
 {
 	num_step+=1;
-	VA_Action[num_step].curr_x = VA_Action[num_step-1].curr_x;
-	VA_Action[num_step].curr_y = VA_Action[num_step-1].curr_y + 1;
+	VA_Action[num_step].curr_x = VA_Action[num_step+1].curr_x;
+	VA_Action[num_step].curr_y = VA_Action[num_step+1].curr_y + 1;
 };
 void move_B()
 {
+	num_step+=1;
+	VA_Action[num_step].curr_x = VA_Action[num_step+1].curr_x;
+	VA_Action[num_step].curr_y = VA_Action[num_step+1].curr_y - 1;
 };
 void move_R()
 {
+	num_step+=1;
+	VA_Action[num_step].curr_x = VA_Action[num_step+1].curr_x + 1;
+	VA_Action[num_step].curr_y = VA_Action[num_step+1].curr_y;
 };
 void move_L()
 {
+	num_step+=1;
+	VA_Action[num_step].curr_x = VA_Action[num_step+1].curr_x - 1;
+	VA_Action[num_step].curr_y = VA_Action[num_step+1].curr_y;
 };
 void BJPI()
 {
