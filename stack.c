@@ -1,4 +1,4 @@
-int num_step=0;
+int num_step=0,m;
 
 typedef struct
 {
@@ -61,65 +61,69 @@ int CWL()
 {
 	while (maze[x-1][y] != '*'
 	{
+		m=0;
 		if (maze[x-1][y] == 'x')
 		{
-			VA_Action.check_left[num_step]==1;
+			VA_Action.check_left[num_step]==m;
 		}
 		else
 		{
-			VA_Action.check_left[num_step]==0;
+			m+=1;
 		}
 	}
 };
 
 int CWR()
 {
+	m=0;
 	while (maze[x+1][y] != '*'
 	{
 		if (maze[x+1][y] == 'x')
 		{
-			VA_Action.check_right[num_step]==1;
+			VA_Action.check_right[num_step]==m;
 		}
 		else
 		{
-			VA_Action.check_right[num_step]==0;
+			m+=1;
 		}
 	}
 };
 
 int CWD()
 {
+	m=0;
 	while (maze[x][y-1] != '*'
 	{
 		if (maze[x][y-1] == 'x')
 		{
-			VA_Action.check_down[num_step]==1;
+			VA_Action.check_down[num_step]==m;
 		}
 		else
 		{
-			VA_Action.check_down[num_step]==0;
+			m+=1;
 		}
 	}
 };
 
 int CWU()
-{
+{	
+	m=0;
 	while (maze[x][y+1] != '*'
 	{
 		if (maze[x][y+1] == 'x')
 		{
-			VA_Action.check_up[num_step]==1;
+			VA_Action.check_up[num_step]==m;
 		}
 		else
 		{
-			VA_Action.check_up[num_step]==0;
+			m+=1;
 		}
 	}
 };
 	       
 void mark()
 {
-	maze[VA_Action[].curr_x][VA_Action[].curr_y] == 'x';
+	maze[VA_Action[num_step].curr_x][VA_Action[num_step].curr_y] == 'x';
 };
 	       
 void move_F()
