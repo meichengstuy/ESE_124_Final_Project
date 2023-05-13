@@ -2,7 +2,10 @@ typedef struct
 {
 	int curr_x;
 	int curr_y;
-	int wall_check;
+	int check_left;
+	int check_right;
+	int check_down;
+	int check_up;
 
 }VA_Action;
 
@@ -47,27 +50,47 @@ if (top == -1)
 
 };
 
-Void clear
+void clear
 {
 
 };
 
-Int CWL
+int CWL
+{
+	while (maze[x-1][y] != '*'
+	{
+		if (maze[x-1][y] == 'x')
+		{
+			VA_Action.left[]==1;
+		}
+		else
+		{
+			VA_Action.left[]==0;
+		}
+	}
+};
+
+int CWR
+{
+	while (maze[x+1][y] != '*'
+	{
+		if (maze[x+1][y] == 'x')
+		{
+			VA_Action.right[]==1;
+		}
+		else
+		{
+			VA_Action.right[]==0;
+		}
+	}
+};
+
+int CWD
 {
 
 };
 
-Int CWR
-{
-
-};
-
-Int CWF
-{
-
-};
-
-Int CWB
+int CWU
 {
 
 };
