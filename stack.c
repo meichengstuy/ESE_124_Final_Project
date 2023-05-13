@@ -114,11 +114,17 @@ int CWU()
 		}
 	}
 };
+	       
 void mark()
 {
+	maze[VA_Action[].curr_x][VA_Action[].curr_y] == 'x';
 };
+	       
 void move_F()
 {
+	num_step+=1;
+	VA_Action[num_step].curr_x = VA_Action[num_step-1].curr_x;
+	VA_Action[num_step].curr_y = VA_Action[num_step-1].curr_y + 1;
 };
 void move_B()
 {
