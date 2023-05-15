@@ -116,19 +116,24 @@ int main()
 		}
 		if (op[i][0] == 'R')
 		{
+		np = 1;
+		nt = 1;
+		//detects integer parameters from string
 			for (int j = 0; j < 9; i++)
 			{
 				c = op[i][j];
-				if (c >= '0' && c <= '9')
+				if (c >= '0' && c <= '9' && np = 1)
 				{
 					pn = atoi(c);
+					np = 0;
 				}
-				if (c > '0' && c <= '9')
+				if (c > '0' && c <= '9' && nt = 1)
 				{
 					pt = atoi(c);
+					nt = 0;
 				}
 			}
-			RPnt(n,t);
+			RPnt(pn,pt);
 		}
 	}
 	//prints out the maze
