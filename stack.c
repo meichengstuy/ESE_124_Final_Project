@@ -186,51 +186,51 @@ int move_L(char mazeArray[])
 	return check_good_deed();
 };
 
-int BJPI()
+int BJPI(char mazeArray[])
 {
 	int sum = 0;
 	
 	if (left){
 		for (int i = 0; i < VA_Action.check_left[num_step], i++)
-			sum += move_L();
+			sum += move_L(mazeArray);
 		left = 0;
 	}
 	
 	else if (right){
 		for (int i = 0; i < VA_Action.check_right[num_step], i++)
-			sum += move_R();
+			sum += move_R(mazeArray);
 		right = 0;
 	}
 	else if (up){
 		for (int i = 0; i < VA_Action.check_up[num_step], i++)
-			sum += move_F();
+			sum += move_F(mazeArray);
 		up = 0;
 	}
 	else if (down){
 		for (int i = 0; i < VA_Action.check_down[num_step], i++)
-			sum += move_B();
+			sum += move_B(mazeArray);
 		down = 0;
 	}
 	return sum;
 };
-int CJPI()
+int CJPI(char mazeArray[])
 {
 	int sum = 0;
 	if (left){
-		sum += move_L();
+		sum += move_L(mazeArray);
 		left = 0;
 	}
 	
 	else if (right){
-		sum += move_R();
+		sum += move_R(mazeArray);
 		right = 0;
 	}
 	else if (up){
-		sum += move_F();
+		sum += move_F(mazeArray);
 		up = 0;
 	}
 	else if (down){
-		sum += move_B();
+		sum += move_B(mazeArray);
 		down = 0;
 	}
 	return sum;
@@ -242,11 +242,11 @@ void backtrack(){
 	VA_Action[num_step].curr_y = pop().y;
 }	
 
-int check_good_deed(){
+int check_good_deed(char mazeArray[]){
 	int x = VA_Action[num_step].curr_x;
 	int y = VA_Action[num_step].curr_y;
 	
-	int current = atoi(maze[x][y]);
+	int current = atoi(mazeArray[x][y]);
 	
 	if (current > 0 && current < 10){
 		return current;
