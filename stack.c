@@ -1,3 +1,4 @@
+#define MAX_ACTIONS 25
 #define MAX_SIZE 15
 #include <stdio.h>
 #include <stdlib.h>
@@ -24,7 +25,8 @@ typedef struct
 
 
 int top =-1;
-VA_Memory[MAX_SIZE];
+VA_Memory Mike_Memory[MAX_SIZE];
+VA_Action Mike_Action[MAX_ACTIONS];
 
 void push(int x, int y)
 	{
@@ -36,8 +38,8 @@ void push(int x, int y)
 	    else
 	    {
 	        top = top + 1;
-	        VA_Memory[top].x = x;
-	        VA_Memory[top].y = y;
+	        Mike_Memory[top].x = x;
+	        Mike_Memory[top].y = y;
 	    }
 	
 	};
@@ -50,34 +52,37 @@ VA_Memory pop(){
     else
     {
         top = top - 1;
-        return VA_memory[top+1];																																													
+        return Mike_Memory[top+1];																																													
     }
 
 }
 
 
-int peek (){
-	return VA_Memory[top];	
+VA_Memory peek (){
+	return Mike_Memory[top];	
 }
 
 void clear()
 {
-while (VA_Memory[top] != NULL)
-    pop(VA_Memory);
+	while (top!=-1)
+	{
+    	pop(Mike_Memory);
+		top-=1;
+	}
 };
 
 
-void CWL(char mazeArray[])
+void CWL(char *mazeArray[])
 {
 	m=0;
 	
-	while (mazeArray[x-1][y] != '*')
+	while ((mazeArray[Mike_Action[num_step].curr_x-1][Mike_Action[num_step].curr_y]) != '*')
 	{
 		
-		if (mazeArray[x-1][y] == 'x')
+		if (mazeArray[Mike_Action[num_step].curr_x-1][Mike_Action[num_step].curr_y] == 'x')
 		{
 			left = 1;
-			VA_Action.check_left[num_step]==m;
+			Mike_Action[num_step].check_left==m;
 		}
 		else
 		{
@@ -86,16 +91,16 @@ void CWL(char mazeArray[])
 	}
 };
 
-void CWR(char mazeArray[])
+void CWR(char *mazeArray[])
 {
 	m=0;
 	
-	while (mazeArray[x+1][y] != '*')
+	while (mazeArray[Mike_Action[num_step].curr_x+1][Mike_Action[num_step].curr_y] != '*')
 	{
-		if (mazeArray[x+1][y] == 'x')
+		if (mazeArray[Mike_Action[num_step].curr_x+1][Mike_Action[num_step].curr_y] == 'x')
 		{
 			right = 1;
-			VA_Action.check_right[num_step]==m;
+			Mike_Action[num_step].check_right==m;
 		}
 		else
 		{
@@ -104,16 +109,16 @@ void CWR(char mazeArray[])
 	}
 };
 
-void CWD(char mazeArray[])
+void CWD(char *mazeArray[])
 {
 	m=0;
 	
-	while (mazeArray[x][y-1] != '*')
+	while (mazeArray[Mike_Action[num_step].curr_x][Mike_Action[num_step].curr_y-1] != '*')
 	{
-		if (mazeArray[x][y-1] == 'x')
+		if (mazeArray[Mike_Action[num_step].curr_x][Mike_Action[num_step].curr_y-1] == 'x')
 		{
 			down = 1;
-			VA_Action.check_down[num_step]==m;
+			Mike_Action[num_step].check_down==m;
 		}
 		else
 		{
@@ -122,16 +127,16 @@ void CWD(char mazeArray[])
 	}
 };
 
-void CWU(char mazeArray[])
+void CWU(char *mazeArray[])
 {	
 	m=0;
 	
-	while (mazeArray[x][y+1] != '*')
+	while (mazeArray[Mike_Action[num_step].curr_x][Mike_Action[num_step].curr_y+1] != '*')
 	{
-		if (mazeArray[x][y+1] == 'x')
+		if (mazeArray[Mike_Action[num_step].curr_x][Mike_Action[num_step].curr_y+1] == 'x')
 		{
 			up = 1;
-			VA_Action.check_up[num_step]==m;
+			Mike_Action[num_step].check_up==m;
 		}
 		else
 		{
@@ -140,16 +145,14 @@ void CWU(char mazeArray[])
 	}
 };
 	       
-void mark(char mazeArray[])
+void mark(char *mazeArray[])
 {
-	mazeArray[VA_Action[num_step].curr_x][VA_Action[num_step].curr_y] == 'x';
+	mazeArray[Mike_Action[num_step].curr_x][Mike_Action[num_step].curr_y] == 'x';
 };
 
-int check_good_deed(char mazeArray[]){
-	int x = VA_Action[num_step].curr_x;
-	int y = VA_Action[num_step].curr_y;
-	
-	int current = atoi(mazeArray[x][y]);
+int check_good_deed(char *mazeArray[]){
+	char c =mazeArray[Mike_Action[num_step].curr_x][Mike_Action[num_step].curr_y];
+	int current = atoi(c);
 	
 	if (current > 0 && current < 10){
 		return current;
@@ -159,78 +162,78 @@ int check_good_deed(char mazeArray[]){
 }
 
 	       
-int move_F(char mazeArray[])
+int move_F(char *mazeArray[])
 {
-	if (mazeArray[VA_Action[num_step+1].curr_x,VA_Action[num_step+1].curr_y + 1] !='*')
+	if (*mazeArray[Mike_Action[num_step+1].curr_x,Mike_Action[num_step+1].curr_y + 1] !='*')
 	    {
 		num_step+=1;
-		VA_Action[num_step].curr_x = VA_Action[num_step+1].curr_x;
-		VA_Action[num_step].curr_y = VA_Action[num_step+1].curr_y + 1;
+		Mike_Action[num_step].curr_x = Mike_Action[num_step+1].curr_x;
+		Mike_Action[num_step].curr_y = Mike_Action[num_step+1].curr_y + 1;
 	    }
-	return check_good_deed(mazeArray);
+	check_good_deed(mazeArray);
 };
 
-int move_B(char mazeArray[])
+int move_B(char *mazeArray[])
 {
-	if (mazeArray[VA_Action[num_step+1].curr_x,VA_Action[num_step+1].curr_y - 1] !='*')
+	if (*mazeArray[Mike_Action[num_step+1].curr_x,Mike_Action[num_step+1].curr_y - 1] !='*')
 	    {
 		num_step+=1;
-		VA_Action[num_step].curr_x = VA_Action[num_step+1].curr_x;
-		VA_Action[num_step].curr_y = VA_Action[num_step+1].curr_y - 1;
+		Mike_Action[num_step].curr_x = Mike_Action[num_step+1].curr_x;
+		Mike_Action[num_step].curr_y = Mike_Action[num_step+1].curr_y - 1;
 		}
-	return check_good_deed(mazeArray);
+	check_good_deed(mazeArray);
 };
 
-int move_R(char mazeArray[])
+int move_R(char *mazeArray[])
 {
-	if (mazeArray[VA_Action[num_step+1].curr_x+1,VA_Action[num_step+1].curr_y] !='*')
+	if (*mazeArray[Mike_Action[num_step+1].curr_x+1,Mike_Action[num_step+1].curr_y] !='*')
 	    {
 		num_step+=1;
-		VA_Action[num_step].curr_x = VA_Action[num_step+1].curr_x + 1;
-		VA_Action[num_step].curr_y = VA_Action[num_step+1].curr_y;
+		Mike_Action[num_step].curr_x = Mike_Action[num_step+1].curr_x + 1;
+		Mike_Action[num_step].curr_y = Mike_Action[num_step+1].curr_y;
 	}
-	return check_good_deed(mazeArray);
+	check_good_deed(mazeArray);
 };
 
-int move_L(char mazeArray[])
+int move_L(char *mazeArray[])
 {
-	if (mazeArray[VA_Action[num_step+1].curr_x-1,VA_Action[num_step+1].curr_y] !='*')
+	if (*mazeArray[Mike_Action[num_step+1].curr_x-1,Mike_Action[num_step+1].curr_y] !='*')
 	    {
 		num_step+=1;
-		VA_Action[num_step].curr_x = VA_Action[num_step+1].curr_x -1;
-		VA_Action[num_step].curr_y = VA_Action[num_step+1].curr_y;
+		Mike_Action[num_step].curr_x = Mike_Action[num_step+1].curr_x -1;
+		Mike_Action[num_step].curr_y = Mike_Action[num_step+1].curr_y;
 	}
-	return check_good_deed(mazeArray);
+	check_good_deed(mazeArray);
 };
 
-int BJPI(char mazeArray[])
+int BJPI(char *mazeArray[])
 {
 	int sum = 0;
 	
 	if (left){
-		for (int i = 0; i < VA_Action.check_left[num_step]; i++)
+		for (int i = 0; i < Mike_Action[num_step].check_left; i++)
 			sum += move_L(mazeArray);
 		left = 0;
 	}
 	
 	else if (right){
-		for (int i = 0; i < VA_Action.check_right[num_step]; i++)
+		for (int i = 0; i < Mike_Action[num_step].check_right; i++)
 			sum += move_R(mazeArray);
 		right = 0;
 	}
 	else if (up){
-		for (int i = 0; i < VA_Action.check_up[num_step]; i++)
+		for (int i = 0; i < Mike_Action[num_step].check_up; i++)
 			sum += move_F(mazeArray);
 		up = 0;
 	}
 	else if (down){
-		for (int i = 0; i < VA_Action.check_down[num_step]; i++)
+		for (int i = 0; i < Mike_Action[num_step].check_down; i++)
 			sum += move_B(mazeArray);
 		down = 0;
 	}
 	return sum;
 };
-int CJPI(char mazeArray[])
+int CJPI(char *mazeArray[])
 {
 	int sum = 0;
 	if (left){
@@ -255,6 +258,6 @@ int CJPI(char mazeArray[])
 
 void backtrack(){
 	num_step += 1;
-	VA_Action[num_step].curr_x = pop().x;
-	VA_Action[num_step].curr_y = pop().y;
+	Mike_Action[num_step].curr_x = pop().x;
+	Mike_Action[num_step].curr_y = pop().y;
 }	
