@@ -89,27 +89,27 @@ int main()
 		}
 		if (strcmp(op[i],"move_F()") == 1)
 		{
-			move_F();
+			points += move_F();
 		}
 		if (strcmp(op[i],"move_B()") == 1)
 		{
-			move_B();
+			points += move_B();
 		}
 		if (strcmp(op[i],"move_R()") == 1)
 		{
-			move_R();
+			points += move_R();
 		}
 		if (strcmp(op[i],"move_L()") == 1)
 		{
-			move_L();
+			points += move_L();
 		}
 		if (strcmp(op[i],"BJPI()") == 1)
 		{
-			BJPI();
+			points += BJPI();
 		}
 		if (strcmp(op[i],"CJPI()") == 1)
 		{
-			CJPI();
+			points += CJPI();
 		}
 		if (strcmp(op[i],"backtrack()") ==1)
 		{
@@ -147,4 +147,5 @@ int main()
 		}
 	}
 	printf ("\n------------\n");
+	printf ("Good Deeds Collected: %d", points);
 }//end of main file
