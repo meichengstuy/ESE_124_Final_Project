@@ -137,37 +137,49 @@ void CWU()
 	}
 };
 	       
-void mark()
+void mark(char mazeArray[])
 {
-	maze[VA_Action[num_step].curr_x][VA_Action[num_step].curr_y] == 'x';
+	mazArray[VA_Action[num_step].curr_x][VA_Action[num_step].curr_y] == 'x';
 };
 	       
-void move_F()
+void move_F(char mazeArray[])
 {
-	num_step+=1;
-	VA_Action[num_step].curr_x = VA_Action[num_step+1].curr_x;
-	VA_Action[num_step].curr_y = VA_Action[num_step+1].curr_y + 1;
+	if (mazeArray[VA_Action[num_step+1].curr_x,VA_Action[num_step+1].curr_y + 1] !='*')
+	    {
+		num_step+=1;
+		VA_Action[num_step].curr_x = VA_Action[num_step+1].curr_x;
+		VA_Action[num_step].curr_y = VA_Action[num_step+1].curr_y + 1;
+	    }
 };
 
-void move_B()
+void move_B(char mazeArray[])
 {
-	num_step+=1;
-	VA_Action[num_step].curr_x = VA_Action[num_step+1].curr_x;
-	VA_Action[num_step].curr_y = VA_Action[num_step+1].curr_y - 1;
+	if (mazeArray[VA_Action[num_step+1].curr_x,VA_Action[num_step+1].curr_y - 1] !='*')
+	    {
+		num_step+=1;
+		VA_Action[num_step].curr_x = VA_Action[num_step+1].curr_x;
+		VA_Action[num_step].curr_y = VA_Action[num_step+1].curr_y - 1;
+		}
 };
 
-void move_R()
+void move_R(char mazeArray[])
 {
-	num_step+=1;
-	VA_Action[num_step].curr_x = VA_Action[num_step+1].curr_x + 1;
-	VA_Action[num_step].curr_y = VA_Action[num_step+1].curr_y;
+	if (mazeArray[VA_Action[num_step+1].curr_x+1,VA_Action[num_step+1].curr_y] !='*')
+	    {
+		num_step+=1;
+		VA_Action[num_step].curr_x = VA_Action[num_step+1].curr_x + 1;
+		VA_Action[num_step].curr_y = VA_Action[num_step+1].curr_y;
+	}
 };
 
-void move_L()
+void move_L(char mazeArray[])
 {
-	num_step+=1;
-	VA_Action[num_step].curr_x = VA_Action[num_step+1].curr_x - 1;
-	VA_Action[num_step].curr_y = VA_Action[num_step+1].curr_y;
+	if (mazeArray[VA_Action[num_step+1].curr_x-1,VA_Action[num_step+1].curr_y] !='*')
+	    {
+		num_step+=1;
+		VA_Action[num_step].curr_x = VA_Action[num_step+1].curr_x -1;
+		VA_Action[num_step].curr_y = VA_Action[num_step+1].curr_y;
+	}
 };
 
 void BJPI()
@@ -179,17 +191,17 @@ void BJPI()
 		left = 0;
 	}
 	
-	if (right){
+	else if (right){
 		for (int i = 0; i < VA_Action.check_right[num_step], i++)
 			move_R();
 		right = 0;
 	}
-	if (up){
+	else if (up){
 		for (int i = 0; i < VA_Action.check_up[num_step], i++)
 			move_F();
 		up = 0;
 	}
-	if (down){
+	else if (down){
 		for (int i = 0; i < VA_Action.check_down[num_step], i++)
 			move_B();
 		down = 0;
@@ -202,15 +214,15 @@ void CJPI()
 		left = 0;
 	}
 	
-	if (right){
+	else if (right){
 		move_R();
 		right = 0;
 	}
-	if (up){
+	else if (up){
 		move_F();
 		up = 0;
 	}
-	if (down){
+	else if (down){
 		move_B();
 		down = 0;
 	}
