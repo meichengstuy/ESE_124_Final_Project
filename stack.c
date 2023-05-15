@@ -21,23 +21,21 @@ typedef struct
 
 int top =-1 ,VA_memory[Mem_size];
 
-void push()
-{
-int x;
-
-    if (top == Mem_size - 1)
-    {
-        printf("\nOverflow!!");
-    }
-    else
-    {
-        printf("\nEnter the element to be added onto the stack: ");
-        scanf("%d", &x);
-        top = top + 1;
-        VA_memory[top] = x;
-    }
-
-};
+void push(int x, int y)
+	{
+	
+	    if (top == MAX_SIZE - 1)
+	    {
+	        printf("\nOverflow!!");
+	    }
+	    else
+	    {
+	        top = top + 1;
+	        VA_Memory[top].x = x;
+	        VA_Memory[top].y = y;
+	    }
+	
+	};
 
 void pop()
 {
