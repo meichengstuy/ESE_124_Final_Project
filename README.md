@@ -1,6 +1,6 @@
 # ESE_124_Final_Project
 
-Contributors: Meicheng, Leo, Charleson, Sabreen
+Contributors: Meicheng Wang, Leo Lin, Charleson Chen, Sabreen Shigri
 
 
 Final project code for ESE 124.
