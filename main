@@ -108,6 +108,10 @@ int main()
 		{
 			CJPI();
 		}
+		if (strcmp(op,"backtrack") ==1)
+		{
+			backtrack();
+		}
 	}
 	//prints out the maze
 	printf ("\nMaze: ------------\n");
