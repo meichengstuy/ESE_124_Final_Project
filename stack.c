@@ -39,7 +39,7 @@ void push(int x, int y)
 	
 	};
 
-VA_Memory pop(){
+VA_memory pop(){
 	if (top == -1)
     {
         printf("\nUnderflow!!");
@@ -47,7 +47,7 @@ VA_Memory pop(){
     else
     {
         top = top - 1;
-        return VA_Memory[top+1];																																													
+        return VA_memory[top+1];																																													
     }
 
 }
@@ -64,7 +64,7 @@ while (VA_memory[top] != NULL)
 };
 
 
-int CWL()
+void CWL()
 {
 	m=0;
 	
@@ -83,7 +83,7 @@ int CWL()
 	}
 };
 
-int CWR()
+void CWR()
 {
 	m=0;
 	
@@ -101,7 +101,7 @@ int CWR()
 	}
 };
 
-int CWD()
+void CWD()
 {
 	m=0;
 	
@@ -119,7 +119,7 @@ int CWD()
 	}
 };
 
-int CWU()
+void CWU()
 {	
 	m=0;
 	
@@ -221,3 +221,14 @@ void backtrack(){
 	VA_Action[num_step].curr_x = pop().x;
 	VA_Action[num_step].curr_y = pop().y;
 }	
+
+int check_good_deed(){
+	int x = VA_Action[num_step].curr_x;
+	int y = VA_Action[num_step].curr_y;
+	
+	int current = atoi(maze[x][y]);
+	
+	if (current > 0 && current < 10){
+		return current;
+	}
+}
