@@ -64,14 +64,14 @@ while (VA_memory[top] != NULL)
 };
 
 
-void CWL()
+void CWL(char mazeArray[])
 {
 	m=0;
 	
-	while (maze[x-1][y] != '*'
+	while (mazeArray[x-1][y] != '*'
 	{
 		
-		if (maze[x-1][y] == 'x')
+		if (mazeArray[x-1][y] == 'x')
 		{
 			left = 1;
 			VA_Action.check_left[num_step]==m;
@@ -83,13 +83,13 @@ void CWL()
 	}
 };
 
-void CWR()
+void CWR(char mazeArray[])
 {
 	m=0;
 	
-	while (maze[x+1][y] != '*'
+	while (mazeArray[x+1][y] != '*'
 	{
-		if (maze[x+1][y] == 'x')
+		if (mazeArray[x+1][y] == 'x')
 		{
 			right = 1;
 			VA_Action.check_right[num_step]==m;
@@ -101,13 +101,13 @@ void CWR()
 	}
 };
 
-void CWD()
+void CWD(char mazeArray[])
 {
 	m=0;
 	
-	while (maze[x][y-1] != '*'
+	while (mazeArray[x][y-1] != '*'
 	{
-		if (maze[x][y-1] == 'x')
+		if (mazeArray[x][y-1] == 'x')
 		{
 			down = 1;
 			VA_Action.check_down[num_step]==m;
@@ -119,13 +119,13 @@ void CWD()
 	}
 };
 
-void CWU()
+void CWU(char mazeArray[])
 {	
 	m=0;
 	
-	while (maze[x][y+1] != '*'
+	while (mazeArray[x][y+1] != '*'
 	{
-		if (maze[x][y+1] == 'x')
+		if (mazeArray[x][y+1] == 'x')
 		{
 			up = 1;
 			VA_Action.check_up[num_step]==m;
