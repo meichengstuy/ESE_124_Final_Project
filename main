@@ -3,6 +3,7 @@
 
 #define MAX_NUMBER_OF_STEPS <>
 #define MAX <>
+#define WORDLENGTH 5
 
 #include "stack.h"
 
@@ -11,9 +12,10 @@ int main()
 	FILE *inpf;
 	FILE *outf;
 	char maze[MAX][MAX]
-	char op[10];
+	char op[MAX_NUMBER_OF_STEPS][WORDLENGTH];
 	int nl = 0; 
   	int nc = 0;
+	int numCommands = 0;
 
 	If (outf == NULL)
 	{
@@ -52,8 +54,12 @@ int main()
 	printf ("\n------------\n");
 	
 	//psuedocode for Ant Intelligence
-	//Code to read from Input File
+	//Stores ALL commands from input file into an array 'op'
 	while(fscanf(inpf,"%s",op) != NULL)
+	{
+		numCommands++;
+	}
+	for (int i = 0; i < numCommands; i++)
 	{
 		//write into output
 		fprintf(outf,"%s\n",op);
