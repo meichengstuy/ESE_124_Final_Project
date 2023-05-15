@@ -53,9 +53,14 @@ if (top == -1)
 
 };
 
+int peek (){
+	return VA_memory[top];	
+}
+
+
 void clear()
 {
-	
+	VA_memory = [];
 };
 
 int CWL()
