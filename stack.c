@@ -21,7 +21,8 @@ typedef struct
 }VA_Memory;
 
 
-int top =-1 ,VA_memory[MAX_SIZE];
+int top =-1;
+VA_Memory[MAX_SIZE];
 
 void push(int x, int y)
 	{
@@ -39,7 +40,7 @@ void push(int x, int y)
 	
 	};
 
-VA_memory pop(){
+VA_Memory pop(){
 	if (top == -1)
     {
         printf("\nUnderflow!!");
@@ -54,13 +55,13 @@ VA_memory pop(){
 
 
 int peek (){
-	return VA_memory[top];	
+	return VA_Memory[top];	
 }
 
 void clear()
 {
-while (VA_memory[top] != NULL)
-    pop(VA_memory);
+while (VA_Memory[top] != NULL)
+    pop(VA_Memory);
 };
 
 
@@ -68,7 +69,7 @@ void CWL(char mazeArray[])
 {
 	m=0;
 	
-	while (mazeArray[x-1][y] != '*'
+	while (mazeArray[x-1][y] != '*')
 	{
 		
 		if (mazeArray[x-1][y] == 'x')
@@ -87,7 +88,7 @@ void CWR(char mazeArray[])
 {
 	m=0;
 	
-	while (mazeArray[x+1][y] != '*'
+	while (mazeArray[x+1][y] != '*')
 	{
 		if (mazeArray[x+1][y] == 'x')
 		{
@@ -105,7 +106,7 @@ void CWD(char mazeArray[])
 {
 	m=0;
 	
-	while (mazeArray[x][y-1] != '*'
+	while (mazeArray[x][y-1] != '*')
 	{
 		if (mazeArray[x][y-1] == 'x')
 		{
@@ -123,7 +124,7 @@ void CWU(char mazeArray[])
 {	
 	m=0;
 	
-	while (mazeArray[x][y+1] != '*'
+	while (mazeArray[x][y+1] != '*')
 	{
 		if (mazeArray[x][y+1] == 'x')
 		{
@@ -139,8 +140,22 @@ void CWU(char mazeArray[])
 	       
 void mark(char mazeArray[])
 {
-	mazArray[VA_Action[num_step].curr_x][VA_Action[num_step].curr_y] == 'x';
+	mazeArray[VA_Action[num_step].curr_x][VA_Action[num_step].curr_y] == 'x';
 };
+
+int check_good_deed(char mazeArray[]){
+	int x = VA_Action[num_step].curr_x;
+	int y = VA_Action[num_step].curr_y;
+	
+	int current = atoi(mazeArray[x][y]);
+	
+	if (current > 0 && current < 10){
+		return current;
+	}
+	else 
+		return 0;
+}
+
 	       
 int move_F(char mazeArray[])
 {
@@ -150,7 +165,7 @@ int move_F(char mazeArray[])
 		VA_Action[num_step].curr_x = VA_Action[num_step+1].curr_x;
 		VA_Action[num_step].curr_y = VA_Action[num_step+1].curr_y + 1;
 	    }
-	return check_good_deed();
+	return check_good_deed(mazeArray);
 };
 
 int move_B(char mazeArray[])
@@ -161,7 +176,7 @@ int move_B(char mazeArray[])
 		VA_Action[num_step].curr_x = VA_Action[num_step+1].curr_x;
 		VA_Action[num_step].curr_y = VA_Action[num_step+1].curr_y - 1;
 		}
-	return check_good_deed();
+	return check_good_deed(mazeArray);
 };
 
 int move_R(char mazeArray[])
@@ -172,7 +187,7 @@ int move_R(char mazeArray[])
 		VA_Action[num_step].curr_x = VA_Action[num_step+1].curr_x + 1;
 		VA_Action[num_step].curr_y = VA_Action[num_step+1].curr_y;
 	}
-	return check_good_deed();
+	return check_good_deed(mazeArray);
 };
 
 int move_L(char mazeArray[])
@@ -183,7 +198,7 @@ int move_L(char mazeArray[])
 		VA_Action[num_step].curr_x = VA_Action[num_step+1].curr_x -1;
 		VA_Action[num_step].curr_y = VA_Action[num_step+1].curr_y;
 	}
-	return check_good_deed();
+	return check_good_deed(mazeArray);
 };
 
 int BJPI(char mazeArray[])
@@ -191,23 +206,23 @@ int BJPI(char mazeArray[])
 	int sum = 0;
 	
 	if (left){
-		for (int i = 0; i < VA_Action.check_left[num_step], i++)
+		for (int i = 0; i < VA_Action.check_left[num_step]; i++)
 			sum += move_L(mazeArray);
 		left = 0;
 	}
 	
 	else if (right){
-		for (int i = 0; i < VA_Action.check_right[num_step], i++)
+		for (int i = 0; i < VA_Action.check_right[num_step]; i++)
 			sum += move_R(mazeArray);
 		right = 0;
 	}
 	else if (up){
-		for (int i = 0; i < VA_Action.check_up[num_step], i++)
+		for (int i = 0; i < VA_Action.check_up[num_step]; i++)
 			sum += move_F(mazeArray);
 		up = 0;
 	}
 	else if (down){
-		for (int i = 0; i < VA_Action.check_down[num_step], i++)
+		for (int i = 0; i < VA_Action.check_down[num_step]; i++)
 			sum += move_B(mazeArray);
 		down = 0;
 	}
@@ -241,16 +256,3 @@ void backtrack(){
 	VA_Action[num_step].curr_x = pop().x;
 	VA_Action[num_step].curr_y = pop().y;
 }	
-
-int check_good_deed(char mazeArray[]){
-	int x = VA_Action[num_step].curr_x;
-	int y = VA_Action[num_step].curr_y;
-	
-	int current = atoi(mazeArray[x][y]);
-	
-	if (current > 0 && current < 10){
-		return current;
-	}
-	else 
-		return 0;
-}
