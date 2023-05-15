@@ -12,6 +12,7 @@ int main()
 {
 	FILE *inpf;
 	FILE *outf;
+	FILE *maze_text;
 	char maze[MAX][MAX]
 	char op[MAX_NUMBER_OF_STEPS][WORDLENGTH];
 	int para[MAX_NUMBER_OF_STEPS];
@@ -21,15 +22,22 @@ int main()
 	int numCommands = 0;
 	int points = 0;
 
-	If (outf == NULL)
+	If ((inpf = fopen("input.txt", "r")) == NULL)
 	{
-		printf(“ERROR:File maze.txt cannot be opened”);
+		printf(“ERROR:File input.txt cannot be opened”);
+		exit(1);
+	}
+	
+	if (outpf = fopen("output.txt", "w")) == NULL){
+		printf("ERROR: File output.txt cannot be opened");
 		exit(1);
 	}
 
 	//puts the file into the array MAZE
-    	if ((inpf = fopen ("maze.txt", "r")) == NULL)
+    	if ((maze_text = fopen ("maze.txt", "r")) == NULL)
   	{
+		printf("ERROR: File maze.txt cannot be opened");
+		exit(1);
 	}
 	else {
 		while ((c = fgetc(inpf)) != EOF)
