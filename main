@@ -15,6 +15,7 @@ int main()
 	char op[MAX_NUMBER_OF_STEPS][WORDLENGTH];
 	int nl = 0; 
   	int nc = 0;
+	char c;
 	int numCommands = 0;
 
 	If (outf == NULL)
@@ -24,11 +25,11 @@ int main()
 	}
 
 	//puts the file into the array MAZE
-    	if ((f = fopen ("maze.txt", "r")) == NULL)
+    	if ((inpf = fopen ("maze.txt", "r")) == NULL)
   	{
 	}
 	else {
-		while ((c = fgetc(f)) != EOF)
+		while ((c = fgetc(inpf)) != EOF)
  		{
 		 	Maze [nl][nc] = c;
 		 	if (c == '\n')
@@ -114,7 +115,7 @@ int main()
 		}
 		if (strcmp(op,"RPnt()") ==1)
 		{
-			backtrack();
+			RPnt(n,t);
 		}
 	}
 	//prints out the maze
