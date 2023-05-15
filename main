@@ -52,6 +52,8 @@ int main()
 	
 	//psuedocode for Ant Intelligence
 	//Code to read from Input File
-	//Execute commands given from Input File
-	//
+	while(gets(inpf) != NULL)
+	{
+		
+	}
 }//end of main file
