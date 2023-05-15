@@ -58,6 +58,18 @@ int main()
 		//write into output
 		fprintf(outf,"%s\n",op);
 		//execute
+		if (strcmp(op,"CWR")
+		{
+		}
+		if (strcmp(op,"CWL")
+		{
+		}
+		if (strcmp(op,"CWF")
+		{
+		}
+		if (strcmp(op,"CWB")
+		{
+		}
 		
 	}
 }//end of main file
