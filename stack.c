@@ -16,7 +16,7 @@ typedef struct
 {
 	int x;
 	int y;
-}VA_Memory;
+}VA_Memory;while (theStack->head != NULL)
 
 
 int top =-1 ,VA_memory[Mem_size];
@@ -60,7 +60,8 @@ int peek (){
 
 void clear()
 {
-	VA_memory = [];
+while (VA_memory[top] != NULL)
+    pop(theStack);
 };
 
 int CWL()
