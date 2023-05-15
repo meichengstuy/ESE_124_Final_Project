@@ -13,6 +13,7 @@ int main()
 	FILE *outf;
 	char maze[MAX][MAX]
 	char op[MAX_NUMBER_OF_STEPS][WORDLENGTH];
+	int para[MAX_NUMBER_OF_STEPS];
 	int nl = 0; 
   	int nc = 0;
 	char c;
@@ -113,7 +114,7 @@ int main()
 		{
 			backtrack();
 		}
-		if (strcmp(op[i],"RPnt()") ==1)
+		if (strcmp(op[i],"RPnt(") ==1)
 		{
 			RPnt(n,t);
 		}
