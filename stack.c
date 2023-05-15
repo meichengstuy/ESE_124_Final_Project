@@ -59,7 +59,7 @@ int peek (){
 void clear()
 {
 while (VA_memory[top] != NULL)
-    pop(theStack);
+    pop(VA_memory);
 };
 
 
