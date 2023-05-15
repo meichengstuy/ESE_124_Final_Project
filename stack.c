@@ -213,9 +213,10 @@ void CJPI()
 
 void backtrack(){
 	num_step += 1;
-	pop();
-	VA_Action[num_step].curr_x = 
+	VA_Action[num_step].curr_x = pop().x;
+	VA_Action[num_step].curr_y = pop().y;
 }	
+
 
 void RP(int n, int t){
 	for (int i = 0)
