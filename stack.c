@@ -251,4 +251,6 @@ int check_good_deed(){
 	if (current > 0 && current < 10){
 		return current;
 	}
+	else 
+		return 0;
 }
