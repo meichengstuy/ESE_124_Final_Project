@@ -37,17 +37,18 @@ void push(int x, int y)
 	
 	};
 
-void pop()
-{
-if (top == -1)
+VA_memory pop(){
+
+if (VA_memory[top] == -1)
     {
         printf("\nUnderflow!!");
     }
     else
     {
-        printf("\nPopped element: %d", inp_array[top]);
         top = top - 1;
+        return VA_memory[top+1];																																													
     }
+
 
 };
 
