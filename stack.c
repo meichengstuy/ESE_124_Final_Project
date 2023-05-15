@@ -1,5 +1,6 @@
 #define MAX_SIZE 15
-
+#include <stdio.h>
+#include <stdlib.h>
 int num_step = 0, m;
 int left = 0,right = 0,up =0, down = 0;
 
