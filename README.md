@@ -1,4 +1,8 @@
 # ESE_124_Final_Project
+
+Contributors: Meicheng, Leo, Charleson, Sabreen
+
+
 Final project code for ESE 124.
 
 Micheal is an ant, and his memory is represented as a stack. We will use a maze to allow Micheal to move around using x and y coordinates according to user input and collect "good deeds".
