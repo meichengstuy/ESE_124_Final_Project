@@ -112,6 +112,10 @@ int main()
 		{
 			backtrack();
 		}
+		if (strcmp(op,"RPnt()") ==1)
+		{
+			backtrack();
+		}
 	}
 	//prints out the maze
 	printf ("\nMaze: ------------\n");
