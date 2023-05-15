@@ -11,6 +11,7 @@ int main()
 	FILE *inpf;
 	FILE *outf;
 	char maze[MAX][MAX]
+	char op[10];
 	int nl = 0; 
   	int nc = 0;
 
@@ -52,8 +53,9 @@ int main()
 	
 	//psuedocode for Ant Intelligence
 	//Code to read from Input File
-	while(gets(inpf) != NULL)
+	while(fscanf(inpf,"%s",op) != NULL)
 	{
-		
+		//write into output
+		//execute
 	}
 }//end of main file
