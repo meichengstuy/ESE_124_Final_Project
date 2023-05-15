@@ -38,19 +38,20 @@ void push(int x, int y)
 	    }
 	
 	};
-VA_memory pop(){
-if (VA_memory[top] == -1)
+
+VA_Memory pop(){
+	if (top == -1)
     {
         printf("\nUnderflow!!");
     }
     else
     {
         top = top - 1;
-        return VA_memory[top+1];																																													
+        return VA_Memory[top+1];																																													
     }
 
 }
-};
+
 
 int peek (){
 	return VA_memory[top];	
@@ -59,19 +60,20 @@ int peek (){
 void clear()
 {
 while (VA_memory[top] != NULL)
-    pop(VA_memory);
+    pop(theStack);
 };
 
 
 int CWL()
 {
 	m=0;
-	left = 1;
+	
 	while (maze[x-1][y] != '*'
 	{
 		
 		if (maze[x-1][y] == 'x')
 		{
+			left = 1;
 			VA_Action.check_left[num_step]==m;
 		}
 		else
@@ -84,11 +86,12 @@ int CWL()
 int CWR()
 {
 	m=0;
-	right = 1;
+	
 	while (maze[x+1][y] != '*'
 	{
 		if (maze[x+1][y] == 'x')
 		{
+			right = 1;
 			VA_Action.check_right[num_step]==m;
 		}
 		else
@@ -101,11 +104,12 @@ int CWR()
 int CWD()
 {
 	m=0;
-	down = 1;
+	
 	while (maze[x][y-1] != '*'
 	{
 		if (maze[x][y-1] == 'x')
 		{
+			down = 1;
 			VA_Action.check_down[num_step]==m;
 		}
 		else
@@ -118,11 +122,12 @@ int CWD()
 int CWU()
 {	
 	m=0;
-	up = 1;
+	
 	while (maze[x][y+1] != '*'
 	{
 		if (maze[x][y+1] == 'x')
 		{
+			up = 1;
 			VA_Action.check_up[num_step]==m;
 		}
 		else
@@ -216,8 +221,3 @@ void backtrack(){
 	VA_Action[num_step].curr_x = pop().x;
 	VA_Action[num_step].curr_y = pop().y;
 }	
-
-
-void RP(int n, int t){
-	for (int i = 0)
-}
