@@ -1,5 +1,7 @@
 # ESE_124_Final_Project
-Final project code for ESE 124
+Final project code for ESE 124.
+
+Micheal is an ant, and his memory is represented as a stack. We will use a maze to allow Micheal to move around using x and y coordinates according to user input and collect "good deeds".
 
 This branch contains the main file, a function that takes in the input file (expected to be a maze) and guides Micheal to traverse the maze using functions from the stack file.
 
