@@ -38,7 +38,7 @@ void push(int x, int y)
 	    }
 	
 	};
-
+VA_memory pop(){
 if (VA_memory[top] == -1)
     {
         printf("\nUnderflow!!");
@@ -49,7 +49,7 @@ if (VA_memory[top] == -1)
         return VA_memory[top+1];																																													
     }
 
-
+}
 };
 
 int peek (){
