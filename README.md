@@ -6,4 +6,4 @@ This branch contains the main file, a function that takes in the input file (exp
 
 The main function then will execute the apporpriate functions from stack, such as pop and peek, to help Micheal go through the maze.
 
-Micheal will constantly read the value of where it is in the maze, and if it is on a good deed ( represented as a number on the input file ), then this is recognized in the code.
+Micheal will constantly read the value of where it is in the maze, and if it is on a good deed ( represented as a number in the input file ), then this is recognized in the code.
