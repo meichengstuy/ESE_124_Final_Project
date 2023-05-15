@@ -65,55 +65,55 @@ int main()
 		//write into output
 		fprintf(outf,"%s\n",op);
 		//execute
-		if (strcmp(op,"CWR()") == 1)
+		if (strcmp(op[i],"CWR()") == 1)
 		{
 			CWR();
 		}
-		if (strcmp(op,"CWL()") == 1)
+		if (strcmp(op[i],"CWL()") == 1)
 		{
 			CWL();
 		}
-		if (strcmp(op,"CWU()") == 1)
+		if (strcmp(op[i],"CWU()") == 1)
 		{
 			CWU();
 		}
-		if (strcmp(op,"CWD()") == 1)
+		if (strcmp(op[i],"CWD()") == 1)
 		{
 			CWD();
 		}
-		if (strcmp(op,"MARK()") == 1)
+		if (strcmp(op[i],"MARK()") == 1)
 		{
 			MARK();
 		}
-		if (strcmp(op,"move_F()") == 1)
+		if (strcmp(op[i],"move_F()") == 1)
 		{
 			move_F();
 		}
-		if (strcmp(op,"move_B()") == 1)
+		if (strcmp(op[i],"move_B()") == 1)
 		{
 			move_B();
 		}
-		if (strcmp(op,"move_R()") == 1)
+		if (strcmp(op[i],"move_R()") == 1)
 		{
 			move_R();
 		}
-		if (strcmp(op,"move_L()") == 1)
+		if (strcmp(op[i],"move_L()") == 1)
 		{
 			move_L();
 		}
-		if (strcmp(op,"BJPI()") == 1)
+		if (strcmp(op[i],"BJPI()") == 1)
 		{
 			BJPI();
 		}
-		if (strcmp(op,"CJPI()") == 1)
+		if (strcmp(op[i],"CJPI()") == 1)
 		{
 			CJPI();
 		}
-		if (strcmp(op,"backtrack()") ==1)
+		if (strcmp(op[i],"backtrack()") ==1)
 		{
 			backtrack();
 		}
-		if (strcmp(op,"RPnt()") ==1)
+		if (strcmp(op[i],"RPnt()") ==1)
 		{
 			RPnt(n,t);
 		}
