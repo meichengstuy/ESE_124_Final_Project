@@ -18,6 +18,7 @@ int main()
   	int nc = 0;
 	char c;
 	int numCommands = 0;
+	int points = 0;
 
 	If (outf == NULL)
 	{
