@@ -65,3 +65,37 @@ Input: Maze array
 if there is no wall in a given direction, increment num_step
 VA_Action current location is updated in given direction
 checks good deed
+
+check_good_deed Function
+------------------------
+Type: int
+Input: char array
+
+turns character at current loaction at maze into integer. If it is within 0 to 10 exclusive, return that value, otherwise return 0. This value will be added to total points of good deed.
+
+CJPI Function
+-------------
+Type: int
+Input: char array
+
+Biased left, then right, then up, then down
+Checks if pheremone flag is raised in VA_Action
+move 1 space in itch direction, incrementing step amount by 1
+
+BJPI Function
+-------------
+Type: int
+Input: char array
+
+Biased left, then right, then up, then down
+Checks if pheremone flag is raised in VA_Action
+if so, repeat moving in the itch direction the number of spaces of the pheremone flag
+
+backtrack Function
+------------------
+Type: void
+Input: void
+
+increments step amount
+pops VA_Memory. Set current location at step_count = to popped value
+
