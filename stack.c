@@ -142,7 +142,7 @@ void mark(char mazeArray[])
 	mazArray[VA_Action[num_step].curr_x][VA_Action[num_step].curr_y] == 'x';
 };
 	       
-void move_F(char mazeArray[])
+int move_F(char mazeArray[])
 {
 	if (mazeArray[VA_Action[num_step+1].curr_x,VA_Action[num_step+1].curr_y + 1] !='*')
 	    {
@@ -150,9 +150,10 @@ void move_F(char mazeArray[])
 		VA_Action[num_step].curr_x = VA_Action[num_step+1].curr_x;
 		VA_Action[num_step].curr_y = VA_Action[num_step+1].curr_y + 1;
 	    }
+	return check_good_deed();
 };
 
-void move_B(char mazeArray[])
+int move_B(char mazeArray[])
 {
 	if (mazeArray[VA_Action[num_step+1].curr_x,VA_Action[num_step+1].curr_y - 1] !='*')
 	    {
@@ -160,9 +161,10 @@ void move_B(char mazeArray[])
 		VA_Action[num_step].curr_x = VA_Action[num_step+1].curr_x;
 		VA_Action[num_step].curr_y = VA_Action[num_step+1].curr_y - 1;
 		}
+	return check_good_deed();
 };
 
-void move_R(char mazeArray[])
+int move_R(char mazeArray[])
 {
 	if (mazeArray[VA_Action[num_step+1].curr_x+1,VA_Action[num_step+1].curr_y] !='*')
 	    {
@@ -170,9 +172,10 @@ void move_R(char mazeArray[])
 		VA_Action[num_step].curr_x = VA_Action[num_step+1].curr_x + 1;
 		VA_Action[num_step].curr_y = VA_Action[num_step+1].curr_y;
 	}
+	return check_good_deed();
 };
 
-void move_L(char mazeArray[])
+int move_L(char mazeArray[])
 {
 	if (mazeArray[VA_Action[num_step+1].curr_x-1,VA_Action[num_step+1].curr_y] !='*')
 	    {
@@ -180,52 +183,57 @@ void move_L(char mazeArray[])
 		VA_Action[num_step].curr_x = VA_Action[num_step+1].curr_x -1;
 		VA_Action[num_step].curr_y = VA_Action[num_step+1].curr_y;
 	}
+	return check_good_deed();
 };
 
-void BJPI()
+int BJPI()
 {
+	int sum = 0;
 	
 	if (left){
 		for (int i = 0; i < VA_Action.check_left[num_step], i++)
-			move_L();
+			sum += move_L();
 		left = 0;
 	}
 	
 	else if (right){
 		for (int i = 0; i < VA_Action.check_right[num_step], i++)
-			move_R();
+			sum += move_R();
 		right = 0;
 	}
 	else if (up){
 		for (int i = 0; i < VA_Action.check_up[num_step], i++)
-			move_F();
+			sum += move_F();
 		up = 0;
 	}
 	else if (down){
 		for (int i = 0; i < VA_Action.check_down[num_step], i++)
-			move_B();
+			sum += move_B();
 		down = 0;
 	}
+	return sum;
 };
-void CJPI()
+int CJPI()
 {
+	int sum = 0;
 	if (left){
-		move_L();
+		sum += move_L();
 		left = 0;
 	}
 	
 	else if (right){
-		move_R();
+		sum += move_R();
 		right = 0;
 	}
 	else if (up){
-		move_F();
+		sum += move_F();
 		up = 0;
 	}
 	else if (down){
-		move_B();
+		sum += move_B();
 		down = 0;
 	}
+	return sum;
 };
 
 void backtrack(){
