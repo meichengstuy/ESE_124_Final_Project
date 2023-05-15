@@ -1,5 +1,7 @@
+#define MAX_SIZE 15
+
 int num_step = 0, m;
-int left = 0,right = 0,up = 0,down = 0;
+int left = right = up = down = 0;
 
 typedef struct
 {
@@ -16,10 +18,10 @@ typedef struct
 {
 	int x;
 	int y;
-}VA_Memory;while (theStack->head != NULL)
+}VA_Memory;
 
 
-int top =-1 ,VA_memory[Mem_size];
+int top =-1 ,VA_memory[MAX_SIZE];
 
 void push(int x, int y)
 	{
@@ -36,8 +38,6 @@ void push(int x, int y)
 	    }
 	
 	};
-
-VA_memory pop(){
 
 if (VA_memory[top] == -1)
     {
@@ -56,12 +56,12 @@ int peek (){
 	return VA_memory[top];	
 }
 
-
 void clear()
 {
 while (VA_memory[top] != NULL)
     pop(theStack);
 };
+
 
 int CWL()
 {
@@ -167,6 +167,7 @@ void move_L()
 
 void BJPI()
 {
+	
 	if (left){
 		for (int i = 0; i < VA_Action.check_left[num_step], i++)
 			move_L();
@@ -209,3 +210,13 @@ void CJPI()
 		down = 0;
 	}
 };
+
+void backtrack(){
+	num_step += 1;
+	pop();
+	VA_Action[num_step].curr_x = 
+}	
+
+void RP(int n, int t){
+	for (int i = 0)
+}
